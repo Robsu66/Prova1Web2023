@@ -1,0 +1,54 @@
+Os React Hooks são funções JavaScript simples que podemos 
+usar para isolar a parte reutilizável de um componente 
+funcional.
+Dentre eles temos o useEffect e o useState que serão os que
+vou usar de exemplo.
+
+useState:
+O useState é usado para adicionar estados locais a 
+componentes funcionais. Ele permite que você adicione estados
+a componentes funcionais sem a necessidade de criar classes.
+
+Exemplo de código:
+import React, { useState } from 'react';
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+}
+
+
+useEffect:
+O useEffect é usado para realizar efeitos secundários 
+em componentes funcionais. Ele permite que você execute código 
+de forma assíncrona, como atualizações de DOM ou chamadas de API, 
+sempre que o componente é montado, atualizado ou desmontado.
+
+Exemplo de código
+
+import React, { useState, useEffect } from 'react';
+
+const Timer = () => {
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect = () => {
+    const interval = setInterval = () => {
+      setSeconds(seconds + 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [seconds]);
+
+  return <p>Seconds: {seconds}</p>;
+}
+
